@@ -5,14 +5,20 @@ import { NextResponse } from "next/server";
 
 export const GET = async (request) => {
   readDB();
-
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: `Room is not found`,
-  //   },
-  //   { status: 404 }
-  // );
+    return NextResponse.json({
+      ok: true,
+      messages: DB.messages,
+    });
+  
+  // if (roomID === false) {
+  //   return NextResponse.json(
+  //     {
+  //       ok: false,
+  //       message: `Room is not found`,
+  //     },
+  //     { status: 404 }
+  //   );
+  // }
 };
 
 export const POST = async (request) => {
